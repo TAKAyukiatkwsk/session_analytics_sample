@@ -1,0 +1,39 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    azure_cognitiveservices_textanalytics (0.17.3)
+      ms_rest_azure (~> 0.11.0)
+    concurrent-ruby (1.1.5)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
+    faraday-cookie_jar (0.0.6)
+      faraday (>= 0.7.4)
+      http-cookie (~> 1.0.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    ms_rest (0.7.4)
+      concurrent-ruby (~> 1.0)
+      faraday (~> 0.9)
+      timeliness (~> 0.3.10)
+    ms_rest_azure (0.11.1)
+      concurrent-ruby (~> 1.0)
+      faraday (~> 0.9)
+      faraday-cookie_jar (~> 0.0.6)
+      ms_rest (~> 0.7.4)
+      unf_ext (= 0.0.7.2)
+    multipart-post (2.1.1)
+    timeliness (0.3.10)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  azure_cognitiveservices_textanalytics (~> 0.17.3)
+
+BUNDLED WITH
+   1.17.2
