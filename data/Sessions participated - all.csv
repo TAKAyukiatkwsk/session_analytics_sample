@@ -1,0 +1,41 @@
+id,title
+1,Cloud Code とコンテナツールで Kubernetes を使った開発を徹底効率化
+2,Cloud Run 〜Knative を使った新しいサーバーレス
+3,メルペイのマイクロ サービスを支える GKE と Cloud Spanner
+4,Twitter 登壇！INSIDE Digital 〜 グローバル規模で活躍するサービス事業社の裏側 〜
+5,進化する音声認識 : 音声コマンドや IVR の最適化から音声分析まで
+6,GCP で実現する次世代ネット通販レコメンデーション
+7,Site Reliability Engineering 入門
+8,"Istio, Kubernetes, Spinnaker を使ったカナリア デプロイメント"
+9,Cloud Spanner in Action
+10,関数型オブジェクト指向命令型 Scala
+11,Scala における型クラス入門
+12,Spotify での Scio を使ったデータ処理
+13,Scala Driven Management
+14,プロジェクトで引き回す型をEffにするメリット
+15,ハイパフォーマンスScala
+16,Scala ♥ Graal
+17,継続とDI
+18,Scala and SRE
+19,"ハウツー・テストproper{t,l}y"
+20,サイバーエージェントにおけるプライベートコンテナ基盤AKEを支える技術
+21,マイクロサービスアプリケーションとしての機械学習
+22,"""Yahoo! JAPANのKubernetes-as-a-Service""で加速するアプリケーション開発"
+23,Kubernetes x PaaS - コンテナアプリケーションのNoOpsへの挑戦
+24,2018年のDocker・Moby
+25,今こそKubernetes。最高の仕事道具で使いこなそう
+26,Kubernetesのない世界 すべてがサーバーレスになる
+27,『コンテナ疲れ』と戦う、k8s・PaaS・Serverlessの活用法！
+28,CNCF: Evolving the Container Landscape
+29,サーバレスで動かすトークン発行プラットフォーム
+30,AWS Serverlessを活用したサービス監視
+31,SaaSを海外展開するために役立つインフラTips
+32,AWS All Stars
+33,http4sとcats-effectで可愛らしい、関数型らしいアプリケーションを書こう！٩(๑^o^๑)۶
+34,アニメーションで理解するAkka StreamsとAkka HTTP
+35,Format things with scalafmt
+36,Scala-erにも影響ありそうなJavaの現状まとめ
+37,Akkaを分散トレーシングで見てみよう
+38,DatabricksとSparkではじめる [データ分析/機械学習] 実践入門
+39,Json codec を楽しもう、現場で役立つ circe
+40,実践GraphQL on Scala
