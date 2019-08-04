@@ -4,7 +4,6 @@ GEM
     ast (2.4.0)
     azure_cognitiveservices_textanalytics (0.17.3)
       ms_rest_azure (~> 0.11.0)
-    coderay (1.1.2)
     concurrent-ruby (1.1.5)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -13,10 +12,10 @@ GEM
     faraday-cookie_jar (0.0.6)
       faraday (>= 0.7.4)
       http-cookie (~> 1.0.0)
+    ffi (1.11.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     jaro_winkler (1.5.3)
-    method_source (0.9.2)
     ms_rest (0.7.4)
       concurrent-ruby (~> 1.0)
       faraday (~> 0.9)
@@ -28,12 +27,11 @@ GEM
       ms_rest (~> 0.7.4)
       unf_ext (= 0.0.7.2)
     multipart-post (2.1.1)
+    natto (1.1.2)
+      ffi (>= 1.9.0)
     parallel (1.17.0)
     parser (2.6.3.0)
       ast (~> 2.4.0)
-    pry (0.12.2)
-      coderay (~> 1.1.0)
-      method_source (~> 0.9.0)
     rainbow (3.0.0)
     rubocop (0.74.0)
       jaro_winkler (~> 1.5.1)
@@ -54,7 +52,7 @@ PLATFORMS
 
 DEPENDENCIES
   azure_cognitiveservices_textanalytics (~> 0.17.3)
-  pry
+  natto (~> 1.1.2)
   rubocop (~> 0.74.0)
 
 BUNDLED WITH
