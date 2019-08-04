@@ -33,7 +33,7 @@ result = textAnalyticsClient.key_phrases(
 
 if (!result.nil? && !result.documents.nil? && result.documents.length > 0)
   key_phrases = result.documents.map(&:key_phrases).flatten
-  aggregate = key_phrases.group_by(&:itself).map {|k,v| [k, v.size]}
+  aggregate = key_phrases.group_by(&:itself).map {|k,v| [k, v.size]}.sort{ |a, b| b[1] <=> a[1] }
   puts Hash[aggregate]
 else
   puts 'No results data..'
