@@ -32,13 +32,9 @@ result = textAnalyticsClient.key_phrases(
 )
 
 if (!result.nil? && !result.documents.nil? && result.documents.length > 0)
-  result.documents.each do |document|
-    puts "Document Id: #{document.id}"
-    puts '  Key Phrases'
-    document.key_phrases.each do |key_phrase|
-      puts "    #{key_phrase}"
-    end
-  end
+  key_phrases = result.documents.map(&:key_phrases).flatten
+  aggregate = key_phrases.group_by(&:itself).map {|k,v| [k, v.size]}
+  puts Hash[aggregate]
 else
   puts 'No results data..'
 end
