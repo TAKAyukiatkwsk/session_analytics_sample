@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 require 'CSV'
 require 'azure_cognitiveservices_textanalytics'
 
 include Azure::CognitiveServices::TextAnalytics::V2_1::Models
 
 credentials =
-    MsRestAzure::CognitiveServicesCredentials.new(ENV['COGNITIVE_SERVICE_KEY'])
+  MsRestAzure::CognitiveServicesCredentials.new(ENV['COGNITIVE_SERVICE_KEY'])
 endpoint = String.new(ENV['API_ENDPOINT'])
 
-textAnalyticsClient =
-    Azure::TextAnalytics::Profiles::Latest::Client.new({
-        credentials: credentials
-    })
-textAnalyticsClient.endpoint = endpoint
+text_analytics_client =
+  Azure::TextAnalytics::Profiles::Latest::Client.new(
+    credentials: credentials
+  )
+text_analytics_client.endpoint = endpoint
 
 def read_data(path)
   documents = []
@@ -27,16 +29,15 @@ end
 
 input_documents = MultiLanguageBatchInput.new
 input_documents.documents = read_data(ENV['DATA_PATH'])
-result = textAnalyticsClient.key_phrases(
+result = text_analytics_client.key_phrases(
   multi_language_batch_input: input_documents
 )
 
-if (!result.nil? && !result.documents.nil? && result.documents.length > 0)
+if !result.nil? && !result.documents.nil? && !result.documents.empty?
   key_phrases = result.documents.map(&:key_phrases).flatten
-  aggregate = key_phrases.group_by(&:itself).map {|k,v| [k, v.size]}.sort{ |a, b| b[1] <=> a[1] }
+  aggregate = key_phrases.group_by(&:itself).map { |k, v| [k, v.size] }
+                         .sort { |a, b| b[1] <=> a[1] }
   puts Hash[aggregate]
 else
   puts 'No results data..'
 end
-
-
