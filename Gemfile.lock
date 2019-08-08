@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.4.0)
     azure_cognitiveservices_textanalytics (0.17.3)
       ms_rest_azure (~> 0.11.0)
     concurrent-ruby (1.1.5)
@@ -13,6 +14,7 @@ GEM
       http-cookie (~> 1.0.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    jaro_winkler (1.5.3)
     ms_rest (0.7.4)
       concurrent-ruby (~> 1.0)
       faraday (~> 0.9)
@@ -24,16 +26,30 @@ GEM
       ms_rest (~> 0.7.4)
       unf_ext (= 0.0.7.2)
     multipart-post (2.1.1)
+    parallel (1.17.0)
+    parser (2.6.3.0)
+      ast (~> 2.4.0)
+    rainbow (3.0.0)
+    rubocop (0.74.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.6)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    ruby-progressbar (1.10.1)
     timeliness (0.3.10)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
+    unicode-display_width (1.6.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   azure_cognitiveservices_textanalytics (~> 0.17.3)
+  rubocop (~> 0.74.0)
 
 BUNDLED WITH
    1.17.2
