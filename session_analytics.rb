@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
+$LOAD_PATH.push('.')
+
 require 'CSV'
 require 'azure_cognitiveservices_textanalytics'
+require 'helper'
 
 include Azure::CognitiveServices::TextAnalytics::V2_1::Models
+include Helper
 
 credentials =
   MsRestAzure::CognitiveServicesCredentials.new(ENV['COGNITIVE_SERVICE_KEY'])
@@ -35,9 +39,7 @@ result = text_analytics_client.key_phrases(
 
 if !result.nil? && !result.documents.nil? && !result.documents.empty?
   key_phrases = result.documents.map(&:key_phrases).flatten
-  aggregate = key_phrases.group_by(&:itself).map { |k, v| [k, v.size] }
-                         .sort { |a, b| b[1] <=> a[1] }
-  puts Hash[aggregate]
+  puts Hash[count_by_group(key_phrases)]
 else
   puts 'No results data..'
 end
