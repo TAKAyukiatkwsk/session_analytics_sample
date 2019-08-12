@@ -27,10 +27,19 @@ def analyze_syntax(lang_client, text)
 end
 
 data = read_data(ENV['DATA_PATH'])
+ngram_mode = ENV['NGRAM_MODE']
 analyzed_data = data.map { |d| analyze_syntax(language, d) }
 
-unigram_list = analyzed_data.map { |ad| unigram(ad) }
-puts Hash[count_by_group(unigram_list.flatten)]
-
-bigram_list = analyzed_data.map { |ad| bigram(ad) }
-puts Hash[count_by_group(bigram_list.flatten)]
+if ngram_mode == 'unigram'
+  unigram_list = analyzed_data.map { |ad| unigram(ad) }
+  count_by_group(unigram_list.flatten).each do |g|
+    CSV { |csv| csv << g }
+  end
+elsif ngram_mode == 'bigram'
+  bigram_list = analyzed_data.map { |ad| bigram(ad) }
+  count_by_group(bigram_list.flatten).each do |g|
+    CSV { |csv| csv << g }
+  end
+else
+  puts 'please set env NGRAM_MODE=(unigram | bigram)'
+end

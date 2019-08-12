@@ -39,7 +39,9 @@ result = text_analytics_client.key_phrases(
 
 if !result.nil? && !result.documents.nil? && !result.documents.empty?
   key_phrases = result.documents.map(&:key_phrases).flatten
-  puts Hash[count_by_group(key_phrases)]
+  count_by_group(key_phrases).each do |g|
+    CSV { |csv| csv << g }
+  end
 else
   puts 'No results data..'
 end
