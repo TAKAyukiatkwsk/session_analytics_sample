@@ -12,3 +12,10 @@ DATA_PATH=./data/Sessions\ paticipated\ -\ all.csv NGRAM_MODE=unigram bundle exe
 
 DATA_PATH=./data/Sessions\ paticipated\ -\ all.csv NGRAM_MODE=bigram bundle exec ruby syntax_analytics.rb > syntax_analytics.csv
 ```
+
+# References
+
+- https://docs.microsoft.com/ja-jp/azure/cognitive-services/text-analytics/quickstarts/ruby-sdk
+- https://googleapis.dev/ruby/google-cloud-language/latest/Google/Cloud/Language.html
+- https://github.com/buruzaemon/natto
+- https://github.com/neologd/mecab-ipadic-neologd
